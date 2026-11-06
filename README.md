@@ -1,18 +1,20 @@
-# INF204 - Pratica Laboratorial 01
+# INF204 - Prática Laboratorial 07
 
-Aplicativo desenvolvido com React Native e Expo para a Pratica Laboratorial 01.
+Aplicativo desenvolvido com React Native e Expo para a Prática Laboratorial 07: consumo de API REST com Axios.
 
 ## Integrantes
 
-- Nome: Lucas Oliveira Paiva | Matricula: 27940
-- Nome: Gabryel Messias Oliveira de Assis | Matricula: 27316
+- Lucas Oliveira Paiva - Matrícula: 27940
+- Gabryel Messias Oliveira de Assis - Matrícula: 27316
 
 ## Funcionalidades
 
-- Incrementar a contagem em uma unidade.
-- Decrementar a contagem sem permitir valores negativos.
-- Zerar a contagem.
-- Botoes personalizados com `TouchableOpacity`.
+- Instância do Axios isolada em `src/services/api.js` (padrão Service).
+- URL base da API lida da variável de ambiente `EXPO_PUBLIC_API_URL` (arquivo `.env`).
+- Busca de utilizadores com `useEffect` e bloco `try/catch/finally`.
+- Indicador de carregamento com `ActivityIndicator`.
+- Desafio extra: pull-to-refresh na `FlatList`, chamando a API novamente.
+- Desafio extra: tela de cadastro (Nome e Email) que envia `api.post()` e exibe alerta de sucesso ou erro.
 
 ## Como executar
 
@@ -22,3 +24,9 @@ npx expo start
 ```
 
 No terminal do Expo, use o QR Code para abrir no Expo Go ou pressione `w` para executar no navegador.
+
+## Testes
+
+```bash
+npm test
+```
