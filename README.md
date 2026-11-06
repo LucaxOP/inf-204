@@ -1,18 +1,22 @@
-# INF204 - Pratica Laboratorial 01
+# INF204 - Prática Laboratorial 08
 
-Aplicativo desenvolvido com React Native e Expo para a Pratica Laboratorial 01.
+Aplicativo desenvolvido com React Native e Expo para a Aula 08: persistência local com AsyncStorage e SQLite.
 
 ## Integrantes
 
-- Nome: Lucas Oliveira Paiva | Matricula: 27940
-- Nome: Gabryel Messias Oliveira de Assis | Matricula: 27316
+- Lucas Oliveira Paiva - Matrícula: 27940
+- Gabryel Messias Oliveira de Assis - Matrícula: 27316
 
 ## Funcionalidades
 
-- Incrementar a contagem em uma unidade.
-- Decrementar a contagem sem permitir valores negativos.
-- Zerar a contagem.
-- Botoes personalizados com `TouchableOpacity`.
+- **Expo SQLite**: `SQLiteProvider` com `onInit` criando a tabela `tarefas` (`src/database/iniciarBanco.js`).
+- Acesso ao banco na tela com o hook `useSQLiteContext`.
+- CRUD de tarefas: `getAllAsync` (SELECT) e `runAsync` com parâmetros `?` (INSERT, UPDATE e DELETE), evitando SQL Injection.
+- **AsyncStorage** (`src/storage/preferencias.js`):
+  - Tema claro/escuro salvo como string na chave `@MeuApp:Tema`.
+  - Perfil do usuário salvo como objeto com `JSON.stringify` / `JSON.parse`.
+  - "Sair" remove só o perfil com `removeItem`, mantendo o tema salvo.
+- Tarefas, tema e perfil continuam disponíveis depois de fechar e reabrir o aplicativo.
 
 ## Como executar
 
@@ -21,4 +25,10 @@ npm install
 npx expo start
 ```
 
-No terminal do Expo, use o QR Code para abrir no Expo Go ou pressione `w` para executar no navegador.
+No terminal do Expo, use o QR Code para abrir no Expo Go (Android/iOS).
+
+## Testes
+
+```bash
+npm test
+```
